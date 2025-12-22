@@ -1,6 +1,6 @@
 const AboutSection = () => {
   return (
-    <section className="pb-20 pt-10 bg-gray-50" id="about">
+    <section className="pb-20 pt-10" id="about">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* HEADER */}
         <div className="text-center mb-12">

@@ -15,7 +15,7 @@ interface VehicleCardProps {
 
 const VehicleCard = ({ title, price, img, onBook, type }: VehicleCardProps) => {
   return (
-    <div className="rounded-xl border bg-white shadow-sm hover:shadow-lg transition overflow-hidden">
+    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-lg hover:shadow-2xl transition overflow-hidden">
       {/* IMAGE */}
       <div className="relative w-full h-48 bg-gray-100">
         <Image src={img} alt={title} fill className="object-cover" />
@@ -23,9 +23,7 @@ const VehicleCard = ({ title, price, img, onBook, type }: VehicleCardProps) => {
 
       {/* CONTENT */}
       <div className="p-4">
-        <h3 className="text-xl font-semibold tracking-wide uppercase text-gray-700">
-          {title}
-        </h3>
+        <h3 className="text-lg font-bold tracking-wide">{title}</h3>
         <div className="flex items-center gap-1 text-sm text-gray-900">
           <span>
             <KeySquare width={20} />
@@ -33,7 +31,7 @@ const VehicleCard = ({ title, price, img, onBook, type }: VehicleCardProps) => {
           {type}
         </div>
         <p className="mt-4 font-bold"> Price per day:</p>
-        <p className="text-xl font-bold text-blue-600">
+        <p className="text-[#5b3b8c] font-extrabold text-xl">
           Rp {price.daily.toLocaleString()}
           <span className="text-sm font-normal text-gray-500"> / hari</span>
         </p>
@@ -60,7 +58,7 @@ const VehicleCard = ({ title, price, img, onBook, type }: VehicleCardProps) => {
         ) : null}
         <button
           onClick={onBook}
-          className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+          className="mt-4 w-full bg-[#5b3b8c] hover:bg-[#4a2f75] text-white py-2 rounded-lg font-semibold transition cursor-pointer"
         >
           Book Now
         </button>

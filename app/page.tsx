@@ -5,7 +5,10 @@ import VehicleSection from "./components/VehicleSection";
 
 export default function Home() {
   return (
-    <main>
+    <main
+      className="bg-linear-to-b from-[#f6c1cc] to-white
+"
+    >
       <HeroSection />
       <VehicleSection />
       <AboutSection />
