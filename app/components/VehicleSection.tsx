@@ -4,7 +4,6 @@ import { useState } from "react";
 import { bikes, bikeTerms, cars, carTerms } from "../lib/data";
 import BookingModal from "./BookingModal";
 import VehicleCarousel from "./VehicleCarousel";
-import Image from "next/image";
 
 const VehicleSection = () => {
   const [selected, setSelected] = useState<any>(null);
@@ -12,7 +11,9 @@ const VehicleSection = () => {
   return (
     <>
       <div className="pt-14 container mx-auto px-4 pb-20" id="vehicles">
-        <h2 className="text-3xl font-bold text-center">Our Vehicles</h2>
+        <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-gta-dark mb-2 text-center uppercase">
+          Our Vehicles
+        </h2>
         <p className="text-center text-muted-foreground mt-2">
           A selection of cars and bikes ready for your journey.
         </p>

@@ -74,7 +74,7 @@ const VehicleCarousel = ({
               key={i}
               onClick={() => api?.scrollTo(i)}
               className={`h-2 w-2 rounded-full ${
-                i === current ? "bg-black" : "bg-gray-300"
+                i === current ? "bg-gta-dark" : "bg-gta-pink"
               }`}
             />
           ))}

@@ -4,7 +4,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* HEADER */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-white">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-gta-dark">
             ABOUT US
           </h2>
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
