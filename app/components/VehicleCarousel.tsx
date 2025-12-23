@@ -36,7 +36,7 @@ const VehicleCarousel = ({
   }, [api]);
 
   return (
-    <div id={sectionId} className="pt-1">
+    <div id={sectionId} className="-mt-3">
       <div className="my-8 flex flex-col gap-2 items-start">
         <h3 className="text-2xl font-semibold">{title}</h3>
         <div className="h-0.5 w-12 bg-black/20 rounded-full" />

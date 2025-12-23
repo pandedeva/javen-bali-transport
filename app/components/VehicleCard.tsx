@@ -15,9 +15,18 @@ interface VehicleCardProps {
 
 const VehicleCard = ({ title, price, img, onBook, type }: VehicleCardProps) => {
   return (
-    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-lg hover:shadow-2xl transition overflow-hidden">
+    <div
+      className="bg-white/70 
+    backdrop-blur-xl
+    rounded-xl p-2
+    lg:w-72
+    shadow-[0_20px_40px_-15px_rgba(107,63,160,0.45)]
+    transition-all duration-300
+    hover:-translate-y-1
+    hover:shadow-[0_30px_60px_-15px_rgba(255,122,199,0.55)]"
+    >
       {/* IMAGE */}
-      <div className="relative w-full h-48 bg-gray-100">
+      <div className="relative w-full h-48">
         <Image src={img} alt={title} fill className="object-cover" />
       </div>
 

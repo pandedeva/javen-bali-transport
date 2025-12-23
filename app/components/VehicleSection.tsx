@@ -4,6 +4,7 @@ import { useState } from "react";
 import { bikes, bikeTerms, cars, carTerms } from "../lib/data";
 import BookingModal from "./BookingModal";
 import VehicleCarousel from "./VehicleCarousel";
+import Image from "next/image";
 
 const VehicleSection = () => {
   const [selected, setSelected] = useState<any>(null);
