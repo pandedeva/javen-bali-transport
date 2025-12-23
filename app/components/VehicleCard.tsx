@@ -31,7 +31,7 @@ const VehicleCard = ({ title, price, img, onBook, type }: VehicleCardProps) => {
       {/* CONTENT */}
       <div className="p-4">
         <h3 className="text-lg font-bold text-gta-purple">{title}</h3>
-        <div className="flex items-center gap-1 text-sm text-gray-900">
+        <div className="flex items-center gap-1 text-xs md:text-sm text-gray-900">
           <span>
             <KeySquare width={20} />
           </span>
