@@ -1,10 +1,16 @@
 import { useState } from "react";
 
+interface Price {
+  daily: number;
+  weekly?: number;
+  monthly?: number;
+}
+
 interface BookingModalProps {
   open: boolean;
   onClose: () => void;
   title: string;
-  price?: number;
+  price?: Price;
   terms: string[];
 }
 
@@ -17,11 +23,40 @@ const BookingModal = ({
 }: BookingModalProps) => {
   if (!open) return null;
 
-  const [days, setDays] = useState("");
+  const [days, setDays] = useState<string>("1");
   const [date, setDate] = useState("");
 
+  const numericDays = Number(days) || 0;
+
+  const calculateTotalPrice = () => {
+    if (!price || numericDays <= 0) return 0;
+
+    let remainingDays = numericDays || 0;
+    let total = 0;
+
+    if (price.monthly && remainingDays >= 30) {
+      const months = Math.floor(remainingDays / 30);
+      total += months * price.monthly;
+      remainingDays %= 30;
+    }
+
+    if (price.weekly && remainingDays >= 7) {
+      const weeks = Math.floor(remainingDays / 7);
+      total += weeks * price.weekly;
+      remainingDays %= 7;
+    }
+
+    if (price.daily && remainingDays >= 0) {
+      total += remainingDays * price.daily;
+    }
+
+    return total;
+  };
+
+  const totalPrice = calculateTotalPrice();
+
   const handleWhatsapp = () => {
-    if (!days || !date) {
+    if (!numericDays || !date) {
       alert("Please fill in all fields.");
       return;
     }
@@ -45,14 +80,17 @@ const BookingModal = ({
       <div className="bg-white rounded-xl w-full max-w-md p-6 relative">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-black"
+          className="absolute top-1 right-2 text-gray-500 hover:text-black cursor-pointer"
         >
-          ✕
+          <span className="text-3xl">&times;</span>
         </button>
 
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">
-          Rp {price?.toLocaleString()} / hari
+        <p className="text-gray-600 mb-1">
+          Rp {price?.daily.toLocaleString()} / Day
+        </p>
+        <p className="mb-4 text-gta-dark font-semibold">
+          Total: Rp {totalPrice.toLocaleString()}
         </p>
 
         {/* FORM */}
@@ -63,6 +101,7 @@ const BookingModal = ({
               type="number"
               min={1}
               value={days}
+              inputMode="numeric"
               onChange={(e) => setDays(e.target.value)}
               className="w-full mt-1 border rounded-lg px-3 py-2"
               placeholder="Contoh: 3"
@@ -89,7 +128,7 @@ const BookingModal = ({
 
         <button
           onClick={handleWhatsapp}
-          className="mt-5 w-full bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition"
+          className="w-full py-2 rounded-full bg-linear-to-r from-gta-pink to-gta-purple text-white font-semibold hover:opacity-90 transition cursor-pointer mt-4"
         >
           Lanjut Booking
         </button>

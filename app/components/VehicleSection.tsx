@@ -39,7 +39,7 @@ const VehicleSection = () => {
         open={!!selected}
         onClose={() => setSelected(null)}
         title={selected?.name}
-        price={selected?.price?.daily}
+        price={selected?.price}
         terms={selected?.type === "car" ? carTerms : bikeTerms}
       />
     </>

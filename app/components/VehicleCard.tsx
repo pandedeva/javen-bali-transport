@@ -40,17 +40,14 @@ const VehicleCard = ({ title, price, img, onBook, type }: VehicleCardProps) => {
         <p className="mt-4 font-bold"> Price per day:</p>
         <p className="text-xl font-extrabold text-gta-dark">
           Rp {price.daily.toLocaleString()}
-          <span className="text-sm font-normal text-gray-500"> / hari</span>
+          <span className="text-sm font-normal text-gray-500"> / Day</span>
         </p>
         {price.weekly ? (
           <>
             <p className="mt-4 font-bold"> Price per week:</p>
             <p className="text-xl font-extrabold text-gta-dark">
               Rp {price.weekly?.toLocaleString()}
-              <span className="text-sm font-normal text-gray-500">
-                {" "}
-                / minggu
-              </span>
+              <span className="text-sm font-normal text-gray-500"> / Week</span>
             </p>
           </>
         ) : null}
@@ -59,7 +56,10 @@ const VehicleCard = ({ title, price, img, onBook, type }: VehicleCardProps) => {
             <p className="mt-4 font-bold"> Price per month:</p>
             <p className="text-xl font-extrabold text-gta-dark">
               Rp {price.monthly?.toLocaleString()}
-              <span className="text-sm font-normal text-gray-500"> / hari</span>
+              <span className="text-sm font-normal text-gray-500">
+                {" "}
+                / Month
+              </span>
             </p>
           </>
         ) : null}
