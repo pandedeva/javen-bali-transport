@@ -18,7 +18,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white">
+      <div className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white mt-8 md:mt-0">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-3">
           Javen Bali Transport
         </h1>

@@ -46,7 +46,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://wa.me/6282340001875"
+                  href="https://wa.me/6289686717200"
                   target="_blank"
                   className="hover:text-white transition"
                 >
@@ -64,11 +64,11 @@ const Footer = () => {
               <li>
                 📞{" "}
                 <a
-                  href="https://wa.me/6282340001875"
+                  href="https://wa.me/6289686717200"
                   target="_blank"
                   className="hover:text-white transition"
                 >
-                  +62 823-4000-1875
+                  +62 896-8671-7200
                 </a>
               </li>
               <li>⏰ Open Daily, 24 Hours</li>

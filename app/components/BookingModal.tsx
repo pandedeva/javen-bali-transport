@@ -61,13 +61,14 @@ const BookingModal = ({
       return;
     }
 
+    // ! masih object to object price pas kirim ke wa
     const message = `
     Halo, Javen Bali Transport!, Saya mau sewa / booking ${title}
-    Harga: Rp ${price?.toLocaleString()} / hari
+    Harga: Rp ${totalPrice?.toLocaleString()} / hari
     Jumlah / Lama sewa: ${days}
     Tanggal sewa: ${date}`;
 
-    const phoneNumber = "6282340001875";
+    const phoneNumber = "6289686717200";
     const urlWhatsapp = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;

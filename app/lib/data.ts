@@ -1,6 +1,6 @@
 export const cars = [
   {
-    name: "Ayla",
+    name: "Agya",
     type: "Matic & Manual",
     img: "/mobil/ayla.png",
     price: {
